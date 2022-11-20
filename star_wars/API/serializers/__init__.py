@@ -1,0 +1,4 @@
+from .ResidentSerializer import ResidentSerializer
+from .PlanetSerializer import PlanetSerializer
+from .FilmSerializer import FilmSerializer
+from .CharacterSerializer import CharacterSerializer

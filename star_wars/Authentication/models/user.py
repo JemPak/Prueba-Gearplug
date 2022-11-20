@@ -52,10 +52,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'
-        
-    data = {
-        "email": "jumonsalvep@unal.edu.co",
-        "nit": 10038283,
-        "name": "juanito",
-        "password": "juanjo123",
-    }
