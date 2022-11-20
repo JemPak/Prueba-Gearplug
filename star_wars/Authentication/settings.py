@@ -6,7 +6,7 @@ SIMPLE_JWT = {
     }
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
@@ -23,6 +23,12 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.MultiPartParser',
     ],
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'STAR WARS API',
+    'DESCRIPTION': 'API documentation for Start Wars lovers',
+    'VERSION': '1.0.0',
 }
 
 AUTH_USER_MODEL = 'Authentication.User'

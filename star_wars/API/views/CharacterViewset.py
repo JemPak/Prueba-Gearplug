@@ -1,16 +1,15 @@
 
-from rest_framework import viewsets
-from rest_framework import mixins
+from rest_framework import viewsets, filters
+
 from API.serializers import CharacterSerializer
 from API.models import Character 
 
 
-class CharacterViewSet(mixins.CreateModelMixin,
-                    mixins.ListModelMixin,
-                    viewsets.GenericViewSet):
+class CharacterViewSet(viewsets.ModelViewSet):
     
-    queryset = Character.objects.all()
+    queryset = Character.objects.all().order_by('pk')
     serializer_class = CharacterSerializer
+    filter_backends = [filters.SearchFilter]
     search_fields = ['resident__name',]
     
     def list(self, request, *args, **kwargs):

@@ -2,11 +2,11 @@
 from rest_framework import serializers
 
 from API.models import Character
-from API.serializers import FilmSerializer
+from API.serializers import FilmSerializer, ResidentSerializer
 
 class CharacterSerializer(serializers.ModelSerializer):
-    film = FilmSerializer(source='films', many=True, read_only=True)
-    
+    films = FilmSerializer(many=True, read_only=True)
+    resident = ResidentSerializer(read_only=True)
     class Meta:
         model = Character
         fields = '__all__'
